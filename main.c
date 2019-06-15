@@ -12,7 +12,7 @@ int main(){
         scanf("%i",&x);
         printf("Ingrese coordenada en y debe ser 0 - 9:\n");
         scanf("%i",&y);
-        if(x<10 && x>-1 && x<10 && x>-1){
+        if(x<10 && x>-1 && y<10 && y>-1){
             jugar(x,y);
             mostrar_tablero();
             printf("\n");

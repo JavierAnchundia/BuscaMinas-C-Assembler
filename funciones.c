@@ -15,6 +15,13 @@ void cargar_tablero(){
         } 
     }
 }
+
+void mostrar_ubicacionMinas(){
+
+for(int i=0; i<10; i++){
+        printf("%i,%i  ",minas_x[i],minas_y[i]);
+     }
+}
 void mostrar_tablero(){
     for (int i = 0; i < 10; i++){
         if(i==0)
@@ -25,15 +32,23 @@ void mostrar_tablero(){
         }
         printf("\n"); 
     } 
+    mostrar_ubicacionMinas();
+     
 }
 
+
+
 bool comprobar_minas(int x, int y){
+    if(x<10 && x>-1 && y<10 && y>-1){
     for(int i=0; i<10; i++){
         if(minas_x[i]==x && minas_y[i]==y){
             return true;
         }
     }
     return false;
+}
+
+return false;
 }
 void cargar_minas(){
     srand(time(NULL));
@@ -65,7 +80,19 @@ void jugar(int x ,int y){
             break;
         }   
         else{
-            tablero[x][y]=49;
+            int contador=0;   
+            if(comprobar_minas(x-1,y))  contador++; //Arriba
+            if(comprobar_minas(x+1,y))  contador++; //Abajo
+            if(comprobar_minas(x,y-1))  contador++;  //Izquierda
+            if(comprobar_minas(x,y+1))  contador++;  //Derecha
+
+            if(comprobar_minas(x-1,y-1)) contador++;  //Esquina Superior Izquierda
+            if(comprobar_minas(x-1,y+1)) contador++;  //Esquina Superior Derecha
+            if(comprobar_minas(x+1,y-1)) contador++; //Esquina Inferior Izquierda
+            if(comprobar_minas(x+1,y+1)) contador++; //Esquina Inferior Derecha
+
+
+            tablero[x][y]=48+contador;
         }
     }
 }
