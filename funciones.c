@@ -31,9 +31,7 @@ void mostrar_tablero(){
             printf("%c ",tablero[i][j]);
         }
         printf("\n"); 
-    } 
-    mostrar_ubicacionMinas();
-     
+    }      
 }
 
 
