@@ -16,11 +16,15 @@ void cargar_tablero(){
     }
 }
 
-void mostrar_ubicacionMinas(){
-
-for(int i=0; i<10; i++){
-        printf("%i,%i  ",minas_x[i],minas_y[i]);
-     }
+void mostrar_ubicacionMinas(bool m){
+    if(m){  
+        printf("\n");
+        printf("Coordenadas de las ubicaciones de las minas dentro del juego: \n");
+        for(int i=0; i<10; i++){
+             printf("- (%i,%i) ",minas_x[i],minas_y[i]);
+        }
+        printf("\n");
+    }
 }
 void mostrar_tablero(){
     for (int i = 0; i < 10; i++){

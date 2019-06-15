@@ -5,7 +5,7 @@
 void mostrar_tablero();
 void cargar_tablero();
 void cargar_minas();
-void mostrar_ubicacionMinas();
+void mostrar_ubicacionMinas(bool m);
 void comprobar_minas(int x, int y);
 bool comprobar_tablero();
 void jugar(int x ,int y);
